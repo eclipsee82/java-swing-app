@@ -59,7 +59,7 @@ public class ContactForm extends JFrame {
         @Override
         public void actionPerformed(ActionEvent e) {
             String name = name_field.getText();
-            String email = name_field.getText();
+            String email = email_field.getText();
 
             String isMale = "Мужской";
             if(!male.isSelected()){
