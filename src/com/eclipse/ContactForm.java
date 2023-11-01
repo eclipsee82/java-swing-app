@@ -67,10 +67,12 @@ public class ContactForm extends JFrame {
             }
 
             boolean checkbox = check.isSelected();
+            String agreement = (checkbox) ?  "Да" : "Нет";
+
 
             JOptionPane.showMessageDialog(null,
                     "Ваша почта: " + email +
-                    "\nВаш пол: " + isMale + "\nВы согласны? " + checkbox, "Привет" + name, JOptionPane.PLAIN_MESSAGE);
+                    "\nВаш пол: " + isMale + "\nВы согласны? " + agreement, "Привет" + name, JOptionPane.PLAIN_MESSAGE);
         }
     }
 
