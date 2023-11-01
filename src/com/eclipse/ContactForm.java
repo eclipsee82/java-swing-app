@@ -7,6 +7,11 @@ import java.awt.event.ActionListener;
 
 public class ContactForm extends JFrame {
 
+    private JTextField name_field;
+    private JTextField email_field;
+    private JRadioButton male, female;
+    private JCheckBox check;
+
     public ContactForm() {
         super("Контактная форма");
         super.setBounds(100, 100, 300, 230);
@@ -16,20 +21,20 @@ public class ContactForm extends JFrame {
         container.setLayout(new GridLayout(5, 2, 2, 10));
 
         JLabel name = new JLabel("Введите имя");
-        JTextField name_field = new JTextField("", 1);
+        name_field = new JTextField("", 1);
 
         JLabel email = new JLabel("Введите email");
-        JTextField email_field = new JTextField("", 1);
+        email_field = new JTextField("", 1);
 
         container.add(name);
         container.add(name_field);
         container.add(email);
         container.add(email_field);
 
-        JRadioButton male = new JRadioButton("Мужской");
-        JRadioButton female = new JRadioButton("Женский");
+        male = new JRadioButton("Мужской");
+        female = new JRadioButton("Женский");
 
-        JCheckBox check = new JCheckBox("Согласен", false);
+        check = new JCheckBox("Согласен", false);
 
         JButton sendButton = new JButton("Отправить");
 
@@ -53,7 +58,19 @@ public class ContactForm extends JFrame {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            
+            String name = name_field.getText();
+            String email = name_field.getText();
+
+            String isMale = "Мужской";
+            if(!male.isSelected()){
+                isMale = "Женский";
+            }
+
+            boolean checkbox = check.isSelected();
+
+            JOptionPane.showMessageDialog(null,
+                    "Ваша почта: " + email +
+                    "\nВаш пол: " + isMale + "\nВы согласны? " + checkbox, "Привет" + name, JOptionPane.PLAIN_MESSAGE);
         }
     }
 
