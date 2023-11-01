@@ -2,16 +2,18 @@ package com.eclipse;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class ContactForm extends JFrame {
 
     public ContactForm() {
         super("Контактная форма");
-        super.setBounds(100, 100, 250, 100);
+        super.setBounds(100, 100, 300, 230);
         super.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         Container container = super.getContentPane();
-        container.setLayout(new GridLayout(3, 2, 2, 2));
+        container.setLayout(new GridLayout(5, 2, 2, 10));
 
         JLabel name = new JLabel("Введите имя");
         JTextField name_field = new JTextField("", 1);
@@ -42,6 +44,17 @@ public class ContactForm extends JFrame {
         container.add(check);
         container.add(sendButton);
 
+
+        sendButton.addActionListener(new ButtonEventManager());
+
+    }
+
+    class ButtonEventManager implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            
+        }
     }
 
 }
