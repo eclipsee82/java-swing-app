@@ -5,6 +5,7 @@ public class Main {
 
         ContactForm contactForm = new ContactForm();
         contactForm.setVisible(true);
+        System.out.println("dewsdw");
 
     }
 }
